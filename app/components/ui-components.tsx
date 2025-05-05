@@ -72,12 +72,12 @@ export function ServiceCard({
 }: ServiceCardProps) {
   const content = (
     <>
-      {icon && <div className="mb-4 text-yellow-500">{icon}</div>}
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      {icon && <div className='mb-4 text-yellow-500'>{icon}</div>}
+      <h3 className='text-xl font-bold mb-2'>{title}</h3>
+      <p className='text-gray-600'>{description}</p>
       {href && (
-        <div className="mt-4 flex items-center text-yellow-500 font-medium">
-          Mehr erfahren <ChevronRight className="ml-1 h-4 w-4" />
+        <div className='mt-4 flex items-center text-yellow-500 font-medium'>
+          Mehr erfahren <ChevronRight className='ml-1 h-4 w-4' />
         </div>
       )}
     </>
@@ -126,10 +126,10 @@ export function Section({
         className
       )}
     >
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">{title}</h2>
-          {description && <p className="text-gray-600">{description}</p>}
+      <div className='container mx-auto px-4'>
+        <div className='max-w-3xl mx-auto text-center mb-12'>
+          <h2 className='text-3xl font-bold mb-4'>{title}</h2>
+          {description && <p className='text-gray-600'>{description}</p>}
         </div>
         {children}
       </div>
@@ -155,19 +155,19 @@ export function ProjectCard({
 }: ProjectCardProps) {
   const content = (
     <>
-      <div className="relative h-64 overflow-hidden rounded-t-lg">
+      <div className='relative h-64 overflow-hidden rounded-t-lg'>
         <img
           src={imageSrc || "/placeholder.svg"}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          className='w-full h-full object-cover transition-transform duration-300 hover:scale-105'
         />
       </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+      <div className='p-6'>
+        <h3 className='text-xl font-bold mb-2'>{title}</h3>
+        <p className='text-gray-600 mb-4'>{description}</p>
         {href && (
-          <div className="flex items-center text-yellow-500 font-medium">
-            Projekt ansehen <ArrowRight className="ml-1 h-4 w-4" />
+          <div className='flex items-center text-yellow-500 font-medium'>
+            Projekt ansehen <ArrowRight className='ml-1 h-4 w-4' />
           </div>
         )}
       </div>
@@ -208,11 +208,11 @@ export function ContactCard({
     <div
       className={cn("p-6 bg-white rounded-lg shadow-md text-center", className)}
     >
-      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-100 text-yellow-500 mb-4">
+      <div className='inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-100 text-yellow-500 mb-4'>
         {icon}
       </div>
-      <h3 className="text-lg font-bold mb-2">{title}</h3>
-      <div className="text-gray-600">{content}</div>
+      <h3 className='text-lg font-bold mb-2'>{title}</h3>
+      <div className='text-gray-600'>{content}</div>
     </div>
   );
 }
