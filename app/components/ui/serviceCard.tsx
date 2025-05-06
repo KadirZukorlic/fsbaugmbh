@@ -20,12 +20,12 @@ export function ServiceCard({
 }: ServiceCardProps) {
   const content = (
     <>
-      {icon && <div className='mb-4 text-yellow-500'>{icon}</div>}
-      <h3 className='text-xl font-bold mb-2'>{title}</h3>
-      <p className='text-gray-600'>{description}</p>
+      {icon && <div className="mb-4 text-yellow-500">{icon}</div>}
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p className="text-gray-600">{description}</p>
       {href && (
-        <div className='mt-4 flex items-center text-yellow-500 font-medium'>
-          Mehr erfahren <ChevronRight className='ml-1 h-4 w-4' />
+        <div className="mt-4 flex items-center text-yellow-500 font-medium">
+          Mehr erfahren <ChevronRight className="ml-1 h-4 w-4" />
         </div>
       )}
     </>

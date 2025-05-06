@@ -1,4 +1,6 @@
-import { Section, ProjectCard, Button } from "./ui-components";
+import { Section } from "./ui/section";
+import { ProjectCard } from "./ui/projectCard";
+import { Button } from "./ui/button";
 
 const projects = [
   {

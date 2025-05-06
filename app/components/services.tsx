@@ -1,5 +1,6 @@
 import { Hammer, Home, Shovel, Trash2, Wrench, Flower2 } from "lucide-react";
-import { Section, ServiceCard } from "./ui-components";
+import { Section } from "./ui/section";
+import { ServiceCard } from "./ui/serviceCard";
 
 const services = [
   {
