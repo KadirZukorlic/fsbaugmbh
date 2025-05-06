@@ -7,7 +7,7 @@ export interface ContactCardProps {
   content: string | ReactNode;
   className?: string;
 }
-
+// comment
 export function ContactCard({
   icon,
   title,
@@ -18,11 +18,11 @@ export function ContactCard({
     <div
       className={cn("p-6 bg-white rounded-lg shadow-md text-center", className)}
     >
-      <div className='inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-100 text-yellow-500 mb-4'>
+      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-100 text-yellow-500 mb-4">
         {icon}
       </div>
-      <h3 className='text-lg font-bold mb-2'>{title}</h3>
-      <div className='text-gray-600'>{content}</div>
+      <h3 className="text-lg font-bold mb-2">{title}</h3>
+      <div className="text-gray-600">{content}</div>
     </div>
   );
 }
