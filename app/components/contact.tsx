@@ -1,5 +1,7 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { Section, ContactCard, Button } from "./ui-components";
+import { Section } from "./ui/section";
+import { Button } from "./ui/button";
+import { ContactCard } from "./ui/contactCard";
 
 export function Contact() {
   return (

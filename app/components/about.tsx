@@ -1,5 +1,6 @@
 import { CheckCircle } from "lucide-react";
-import { Section, Button } from "./ui-components";
+import { Button } from "../components/ui/button";
+import { Section } from "./ui/section";
 
 const benefits = [
   "Über 15 Jahre Erfahrung im Baugewerbe",
