@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 
-import heroimage from "../assets/ivan-henao-04rZ7R1fKhY-unsplash.jpg";
+import heroimage from "../assets/ivan-henao-04rZ7R1fKhY-unsplash_reduce.jpg";
 
 export function Hero() {
   return (
