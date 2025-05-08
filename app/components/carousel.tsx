@@ -1,7 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -18,13 +18,18 @@ const images = [image1, image2, image3, image4, image5, image6];
 
 export function Carousel() {
   return (
-    <div className='w-screen overflow-hidden my-5'>
+    <div className="w-screen overflow-hidden my-5">
       <Swiper
         slidesPerView={2}
         centeredSlides={true}
         loop={true}
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         spaceBetween={-120}
-        className='h-[100px] sm:h-[100px] md:h-[150px] lg:h-[350px]'
+        className="h-[100px] sm:h-[100px] md:h-[150px] lg:h-[350px]"
         breakpoints={{
           550: {
             slidesPerView: 2,
@@ -41,11 +46,11 @@ export function Carousel() {
         }}
       >
         {images.map((image) => (
-          <SwiperSlide className='h-full'>
+          <SwiperSlide className="h-full">
             <img
               src={image}
-              alt='slika1'
-              className='w-full h-full object-cover clip-diagonal'
+              alt="slika1"
+              className="w-full h-full object-cover clip-diagonal"
             />
           </SwiperSlide>
         ))}
