@@ -29,7 +29,7 @@ export function ProjectGallery({
 }: ProjectGalleryProps) {
   return (
     // <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-    <div className='group relative overflow-hidden rounded-lg cursor-pointer'>
+    <div className='group relative overflow-hidden rounded-lg'>
       <div className='aspect-[4/3] w-full overflow-hidden'>
         <Image
           src={imageSrc || "/placeholder.svg"}
