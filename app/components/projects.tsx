@@ -58,12 +58,12 @@ const projects = [
 export function Projects() {
   return (
     <Section
-      id="projekte"
-      title="Unsere Projekte"
-      description="Entdecken Sie eine Auswahl unserer erfolgreich abgeschlossenen Projekte."
-      variant="gray"
+      id='projekte'
+      title='Unsere Projekte'
+      description='Entdecken Sie eine Auswahl unserer erfolgreich abgeschlossenen Projekte.'
+      variant='gray'
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         {projects.map((project, index) => (
           <ProjectGallery
             key={index}
@@ -76,8 +76,8 @@ export function Projects() {
         ))}
       </div>
 
-      <div className="mt-12 text-center">
-        <Button variant="primary" size="lg" href="#">
+      <div className='mt-12 text-center'>
+        <Button variant='primary' size='lg' href='#'>
           Alle Projekte ansehen
         </Button>
       </div>
