@@ -1,4 +1,3 @@
-import { Contact } from "lucide-react";
 import { About } from "./components/about";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
@@ -16,7 +15,6 @@ export default function Home() {
       <Services />
       <About />
       <Projects />
-      <Contact />
       <Footer />
     </main>
   );
