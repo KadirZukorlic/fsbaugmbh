@@ -7,14 +7,27 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
-const image1 = "/images/hero.jpg";
-const image2 = "/images/image2.jpg";
-const image3 = "/images/image3.jpg";
-const image4 = "/images/image4.jpg";
-const image5 = "/images/image5.jpg";
-const image6 = "/images/image6.jpg";
+const image1 = "/images/projekat1.jpg";
+const image2 = "/images/projekat2.jpg";
+const image3 = "/images/projekat3.jpg";
+const image4 = "/images/projekat7.jpg";
+const image5 = "/images/projekat5.jpg";
+const image6 = "/images/projekat6.jpg";
+const image7 = "/images/projekat7.jpg";
+const image8 = "/images/projekat8.jpg";
+const image9 = "/images/projekat9.jpg";
 
-const images = [image1, image2, image3, image4, image5, image6];
+const images = [
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+];
 
 export function Carousel() {
   return (
