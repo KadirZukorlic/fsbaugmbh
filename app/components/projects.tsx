@@ -2,22 +2,27 @@ import { Section } from "./ui/section";
 import { Button } from "./ui/button";
 import { ProjectGallery } from "./projectGalery";
 
-const imagePath = "/images/hero.jpg";
+const terrasse = "/images/terrasse.jpg";
+const außenbereich2 = "/images/projekat8.jpg";
+const außenbereich3 = "/images/projekat7.jpg";
+const plannung = "/images/3dplannung.jpg";
+const renovierung2 = "/images/projekat1.jpg";
+const garten = "/images/garten.jpg";
 
 const projects = [
   {
     title: "Komplette Hausrenovierung",
     description:
       "Umfassende Sanierung eines historischen Gebäudes mit Erhalt der charakteristischen Elemente.",
-    imageSrc: imagePath,
-    category: "Renovierung",
+    imageSrc: plannung,
+    category: "3D Plannung",
     href: "#",
   },
   {
     title: "Moderne Terrasse",
     description:
       "Neugestaltung eines 500m² großen Gartens mit Terrasse, Wegen und umfangreichen Pflanzarbeiten.",
-    imageSrc: imagePath,
+    imageSrc: terrasse,
     category: "Außenbereich",
     href: "#",
   },
@@ -25,7 +30,7 @@ const projects = [
     title: "Gartenumgestaltung",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
-    imageSrc: imagePath,
+    imageSrc: garten,
     category: "Garten",
     href: "#",
   },
@@ -33,7 +38,7 @@ const projects = [
     title: "Badezimmersanierung",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
-    imageSrc: imagePath,
+    imageSrc: renovierung2,
     category: "Renovierung",
     href: "#",
   },
@@ -41,7 +46,7 @@ const projects = [
     title: "Steinmauer",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
-    imageSrc: imagePath,
+    imageSrc: außenbereich2,
     category: "Außenbereich",
     href: "#",
   },
@@ -49,7 +54,7 @@ const projects = [
     title: "Pflasterarbeiten",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
-    imageSrc: imagePath,
+    imageSrc: außenbereich3,
     category: "Außenbereich",
     href: "#",
   },

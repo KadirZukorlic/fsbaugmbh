@@ -2,6 +2,8 @@ import { CheckCircle } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Section } from "./ui/section";
 
+const image6 = "/images/projekat6.jpg";
+
 const benefits = [
   "Über 15 Jahre Erfahrung im Baugewerbe",
   "Qualifizierte und zuverlässige Fachkräfte",
@@ -51,7 +53,7 @@ export function About() {
         <div className='relative'>
           <div className='aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-xl'>
             <img
-              src='/images/about.jpg'
+              src={image6}
               alt='FS Bauunternehmer Team'
               className='w-full h-full object-cover'
             />
