@@ -11,6 +11,7 @@ const garten = "/images/garten.jpg";
 
 const projects = [
   {
+    id: "1",
     title: "Komplette Hausrenovierung",
     description:
       "Umfassende Sanierung eines historischen Gebäudes mit Erhalt der charakteristischen Elemente.",
@@ -19,6 +20,7 @@ const projects = [
     href: "#",
   },
   {
+    id: "2",
     title: "Moderne Terrasse",
     description:
       "Neugestaltung eines 500m² großen Gartens mit Terrasse, Wegen und umfangreichen Pflanzarbeiten.",
@@ -27,6 +29,7 @@ const projects = [
     href: "#",
   },
   {
+    id: "3",
     title: "Gartenumgestaltung",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
@@ -35,6 +38,7 @@ const projects = [
     href: "#",
   },
   {
+    id: "4",
     title: "Badezimmersanierung",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
@@ -43,6 +47,7 @@ const projects = [
     href: "#",
   },
   {
+    id: "5",
     title: "Steinmauer",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
@@ -51,6 +56,7 @@ const projects = [
     href: "#",
   },
   {
+    id: "6",
     title: "Pflasterarbeiten",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
@@ -71,6 +77,7 @@ export function Projects() {
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         {projects.map((project, index) => (
           <ProjectGallery
+            id={project.id}
             key={index}
             title={project.title}
             description={project.description}

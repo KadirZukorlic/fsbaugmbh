@@ -1,6 +1,7 @@
 import { CheckCircle } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Section } from "./ui/section";
+import ScrollAnimationX from "./ScrollAnimationX";
 
 const image6 = "/images/projekat6.jpg";
 
@@ -22,32 +23,39 @@ export function About() {
     >
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
         <div>
-          <p className='text-lg text-gray-700 mb-6'>
-            FS Bauunternehmer ist Ihr zuverlässiger Partner für alle Bauvorhaben
-            in Böblingen und Umgebung. Seit unserer Gründung haben wir uns auf
-            Renovierungs-, Sanierungs- und Umbauarbeiten spezialisiert und
-            bieten unseren Kunden maßgeschneiderte Lösungen für ihre
-            Bauprojekte.
-          </p>
-          <p className='text-lg text-gray-700 mb-8'>
-            Unser erfahrenes Team aus qualifizierten Fachkräften steht Ihnen von
-            der Planung bis zur Fertigstellung mit Rat und Tat zur Seite. Wir
-            legen großen Wert auf Qualität, Termintreue und eine transparente
-            Kommunikation.
-          </p>
+          <ScrollAnimationX sec={0.3} strana='left'>
+            <p className='text-lg text-gray-700 mb-6'>
+              FS Bauunternehmer ist Ihr zuverlässiger Partner für alle
+              Bauvorhaben in Böblingen und Umgebung. Seit unserer Gründung haben
+              wir uns auf Renovierungs-, Sanierungs- und Umbauarbeiten
+              spezialisiert und bieten unseren Kunden maßgeschneiderte Lösungen
+              für ihre Bauprojekte.
+            </p>
+          </ScrollAnimationX>
 
-          <ul className='space-y-3 mb-8'>
-            {benefits.map((benefit, index) => (
-              <li key={index} className='flex items-start'>
-                <CheckCircle className='h-6 w-6 text-green-500 mr-2 flex-shrink-0 mt-0.5' />
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
+          <ScrollAnimationX sec={0.5} strana='left'>
+            <p className='text-lg text-gray-700 mb-8'>
+              Unser erfahrenes Team aus qualifizierten Fachkräften steht Ihnen
+              von der Planung bis zur Fertigstellung mit Rat und Tat zur Seite.
+              Wir legen großen Wert auf Qualität, Termintreue und eine
+              transparente Kommunikation.
+            </p>
+          </ScrollAnimationX>
 
-          <Button variant='primary' href='#kontakt'>
-            Kontaktieren Sie uns
-          </Button>
+          <ScrollAnimationX sec={0.7} strana='left'>
+            <ul className='space-y-3 mb-8'>
+              {benefits.map((benefit, index) => (
+                <li key={index} className='flex items-start'>
+                  <CheckCircle className='h-6 w-6 text-green-500 mr-2 flex-shrink-0 mt-0.5' />
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+
+            <Button variant='primary' href='#kontakt'>
+              Kontaktieren Sie uns
+            </Button>
+          </ScrollAnimationX>
         </div>
 
         <div className='relative'>
