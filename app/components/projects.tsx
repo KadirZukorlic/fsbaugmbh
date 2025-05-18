@@ -1,6 +1,7 @@
 import { Section } from "./ui/section";
 import { Button } from "./ui/button";
 import { ProjectGallery } from "./projectGalery";
+import Link from "next/link";
 
 const terrasse = "/images/terrasse.jpg";
 const außenbereich2 = "/images/projekat8.jpg";
@@ -89,9 +90,14 @@ export function Projects() {
       </div>
 
       <div className='mt-12 text-center'>
-        <Button variant='primary' size='lg' href='#'>
-          Alle Projekte ansehen
-        </Button>
+        <Link
+          href={"/Projects"}
+          className='group relative block overflow-hidden rounded-lg'
+        >
+          <Button className='cursor-pointer' variant='primary' size='lg'>
+            Alle Projekte ansehen
+          </Button>
+        </Link>
       </div>
     </Section>
   );

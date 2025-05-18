@@ -1,10 +1,12 @@
+"use client";
+import { useRouter } from "next/navigation";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { Header } from "@/app/components/header";
 import { Footer } from "@/app/components/footer";
-import Link from "next/link";
+import { use } from "react";
 import { Carousel } from "@/app/components/carousel";
 import ScrollAnimationX from "@/app/components/ScrollAnimationX";
+import Image from "next/image";
 
 const terrasse = "/images/terrasse.jpg";
 const außenbereich2 = "/images/projekat8.jpg";
@@ -70,8 +72,15 @@ const projects = [
   },
 ];
 
-export default function ProjectDetails({ params }: { params: { id: string } }) {
-  const project = projects.find((p) => p.id === params.id);
+export default function ProjectDetails({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = use(params);
+  const router = useRouter();
+
+  const project = projects.find((p) => p.id === id);
 
   if (!project) return notFound();
 
@@ -112,13 +121,14 @@ export default function ProjectDetails({ params }: { params: { id: string } }) {
               </ScrollAnimationX>
             </div>
 
-            <Link href='/'>
-              <div className='mt-6'>
-                <button className='px-6 py-3 cursor-pointer bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg text-sm font-medium transition duration-200'>
-                  Zurück
-                </button>
-              </div>
-            </Link>
+            <div className='mt-6'>
+              <button
+                onClick={() => router.back()}
+                className='px-6 py-3 cursor-pointer bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg text-sm font-medium transition duration-200'
+              >
+                Zurück
+              </button>
+            </div>
           </div>
         </div>
       </section>
