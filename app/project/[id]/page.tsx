@@ -90,7 +90,7 @@ export default function ProjectDetails({
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
-          <ScrollAnimationX sec={0.4} strana="left">
+          <ScrollAnimationX sec={0.4} side="left">
             <div className="w-full h-full">
               <div className="relative w-full h-full rounded-xl overflow-hidden shadow-lg min-h-[300px] lg:min-h-[500px]">
                 <Image
@@ -106,7 +106,7 @@ export default function ProjectDetails({
 
           <div className="flex flex-col justify-between h-full">
             <div>
-              <ScrollAnimationX sec={0.4} strana="right">
+              <ScrollAnimationX sec={0.4} side="right">
                 <span className="text-sm text-yellow-500 font-semibold uppercase tracking-wide">
                   {project.category}
                 </span>

@@ -7,10 +7,10 @@ import { motion, useAnimation } from "framer-motion";
 type Props = {
   children: ReactNode;
   sec: number;
-  strana: "left" | "right" | "top" | "bottom";
+  side: "left" | "right" | "top" | "bottom";
 };
 
-const ScrollAnimationX = ({ children, sec, strana }: Props) => {
+const ScrollAnimationX = ({ children, sec, side }: Props) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -24,7 +24,7 @@ const ScrollAnimationX = ({ children, sec, strana }: Props) => {
   }, [controls, inView]);
 
   let initialPosition: { x?: number; y?: number } = {};
-  switch (strana) {
+  switch (side) {
     case "left":
       initialPosition = { x: -400 };
       break;
