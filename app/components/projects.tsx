@@ -1,6 +1,7 @@
 import { Section } from "./ui/section";
 import { Button } from "./ui/button";
 import { ProjectGallery } from "./projectGalery";
+import Link from "next/link";
 
 const terrasse = "/images/terrasse.jpg";
 const außenbereich2 = "/images/projekat8.jpg";
@@ -11,6 +12,7 @@ const garten = "/images/garten.jpg";
 
 const projects = [
   {
+    id: "1",
     title: "Komplette Hausrenovierung",
     description:
       "Umfassende Sanierung eines historischen Gebäudes mit Erhalt der charakteristischen Elemente.",
@@ -19,6 +21,7 @@ const projects = [
     href: "#",
   },
   {
+    id: "2",
     title: "Moderne Terrasse",
     description:
       "Neugestaltung eines 500m² großen Gartens mit Terrasse, Wegen und umfangreichen Pflanzarbeiten.",
@@ -27,6 +30,7 @@ const projects = [
     href: "#",
   },
   {
+    id: "3",
     title: "Gartenumgestaltung",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
@@ -35,6 +39,7 @@ const projects = [
     href: "#",
   },
   {
+    id: "4",
     title: "Badezimmersanierung",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
@@ -43,6 +48,7 @@ const projects = [
     href: "#",
   },
   {
+    id: "5",
     title: "Steinmauer",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
@@ -51,6 +57,7 @@ const projects = [
     href: "#",
   },
   {
+    id: "6",
     title: "Pflasterarbeiten",
     description:
       "Komplette Innenrenovierung mit neuen Böden, Wänden und moderner Elektroinstallation.",
@@ -71,6 +78,7 @@ export function Projects() {
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         {projects.map((project, index) => (
           <ProjectGallery
+            id={project.id}
             key={index}
             title={project.title}
             description={project.description}
@@ -82,9 +90,14 @@ export function Projects() {
       </div>
 
       <div className='mt-12 text-center'>
-        <Button variant='primary' size='lg' href='#'>
-          Alle Projekte ansehen
-        </Button>
+        <Link
+          href={"/Projects"}
+          className='group relative block overflow-hidden rounded-lg'
+        >
+          <Button className='cursor-pointer' variant='primary' size='lg'>
+            Alle Projekte ansehen
+          </Button>
+        </Link>
       </div>
     </Section>
   );
