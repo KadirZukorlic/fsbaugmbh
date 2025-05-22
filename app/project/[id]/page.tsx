@@ -88,43 +88,43 @@ export default function ProjectDetails({
     <>
       <Header />
 
-      <section className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch'>
-          <ScrollAnimationX sec={0.4} strana='left'>
-            <div className='w-full h-full'>
-              <div className='relative w-full h-full rounded-xl overflow-hidden shadow-lg min-h-[300px] lg:min-h-[500px]'>
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+          <ScrollAnimationX sec={0.4} strana="left">
+            <div className="w-full h-full">
+              <div className="relative w-full h-full rounded-xl overflow-hidden shadow-lg min-h-[300px] lg:min-h-[500px]">
                 <Image
                   src={project.imageSrc}
                   alt={project.title}
                   fill
-                  className='object-cover'
+                  className="object-cover"
                   priority
                 />
               </div>
             </div>
           </ScrollAnimationX>
 
-          <div className='flex flex-col justify-between h-full'>
+          <div className="flex flex-col justify-between h-full">
             <div>
-              <ScrollAnimationX sec={0.4} strana='right'>
-                <span className='text-sm text-yellow-500 font-semibold uppercase tracking-wide'>
+              <ScrollAnimationX sec={0.4} strana="right">
+                <span className="text-sm text-yellow-500 font-semibold uppercase tracking-wide">
                   {project.category}
                 </span>
 
-                <h1 className='text-3xl sm:text-4xl font-bold mt-2 text-gray-900'>
+                <h1 className="text-3xl sm:text-4xl font-bold mt-2 text-gray-900">
                   {project.title}
                 </h1>
 
-                <p className='mt-4 text-gray-700 text-base sm:text-lg leading-relaxed'>
+                <p className="mt-4 text-gray-700 text-base sm:text-lg leading-relaxed">
                   {project.description}
                 </p>
               </ScrollAnimationX>
             </div>
 
-            <div className='mt-6'>
+            <div className="mt-6">
               <button
                 onClick={() => router.back()}
-                className='px-6 py-3 cursor-pointer bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg text-sm font-medium transition duration-200'
+                className="px-6 py-3 cursor-pointer bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg text-sm font-medium transition duration-200"
               >
                 Zurück
               </button>
