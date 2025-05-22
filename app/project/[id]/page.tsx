@@ -92,7 +92,7 @@ export default function ProjectDetails({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
           <ScrollAnimationX sec={0.4} side="left">
             <div className="w-full h-full">
-              <div className="relative w-full h-full rounded-xl overflow-hidden shadow-lg min-h-[300px] lg:min-h-[500px]">
+              <div className="relative w-full h-full rounded overflow-hidden shadow-lg min-h-[300px] lg:min-h-[500px]">
                 <Image
                   src={project.imageSrc}
                   alt={project.title}
