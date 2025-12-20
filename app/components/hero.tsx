@@ -25,7 +25,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className='text-yellow-500 font-bold text-3xl sm:text-4xl block mb-8'>
+            <span className='bg-gradient-to-r from-black via-yellow-500 to-black bg-clip-text text-transparent font-bold text-3xl sm:text-4xl block mb-8'>
               FS Bauunternehmen
             </span>
           </motion.div>

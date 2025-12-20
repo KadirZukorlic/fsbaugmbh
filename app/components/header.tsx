@@ -43,7 +43,7 @@ export function Header() {
           className="flex items-center"
         >
           <Link href="/" className="flex items-center">
-            <span className="text-yellow-500 font-bold text-2xl tracking-tight">
+            <span className="bg-gradient-to-r from-black via-yellow-500 to-black bg-clip-text text-transparent font-bold text-2xl tracking-tight">
               FS Bauunternehmen
             </span>
           </Link>
