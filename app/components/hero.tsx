@@ -53,25 +53,27 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className='flex flex-wrap gap-4'
+            className='flex flex-col sm:flex-row flex-wrap gap-4'
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className='w-full sm:w-auto'
             >
-              <Button variant='primary' size='lg' href='#leistungen'>
+              <Button variant='primary' size='lg' href='#leistungen' className='w-full sm:w-auto'>
                 Unsere Leistungen
               </Button>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className='w-full sm:w-auto'
             >
               <Button
                 variant='outline'
                 size='lg'
                 href='#kontakt'
-                className='text-white border-white hover:bg-white/10'
+                className='text-white border-white hover:bg-white/10 w-full sm:w-auto'
               >
                 Kontakt aufnehmen
               </Button>
