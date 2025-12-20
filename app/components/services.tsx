@@ -1,6 +1,10 @@
+"use client";
+
 import { Hammer, Home, Shovel, Trash2, Wrench, Flower2 } from "lucide-react";
 import { Section } from "./ui/section";
 import { ServiceCard } from "./ui/serviceCard";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const services = [
   {
@@ -48,6 +52,33 @@ const services = [
 ];
 
 export function Services() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <Section
       id="leistungen"
@@ -55,17 +86,24 @@ export function Services() {
       description="Wir bieten ein umfassendes Angebot an Baudienstleistungen für Privat- und Gewerbekunden."
       variant="gray"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {services.map((service, index) => (
-          <ServiceCard
-            key={index}
-            title={service.title}
-            description={service.description}
-            icon={service.icon}
-            href={service.href}
-          />
+          <motion.div key={index} variants={itemVariants}>
+            <ServiceCard
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+              href={service.href}
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

@@ -1,7 +1,11 @@
+"use client";
+
 import { Section } from "./ui/section";
 import { Button } from "./ui/button";
 import { ProjectGallery } from "./projectGalery";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const terrasse = "/images/terrasse.jpg";
 const außenbereich2 = "/images/projekat8.jpg";
@@ -68,6 +72,34 @@ const projects = [
 ];
 
 export function Projects() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <Section
       id='projekte'
@@ -75,30 +107,47 @@ export function Projects() {
       description='Entdecken Sie eine Auswahl unserer erfolgreich abgeschlossenen Projekte.'
       variant='gray'
     >
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
+      >
         {projects.map((project, index) => (
-          <ProjectGallery
-            id={project.id}
-            key={index}
-            title={project.title}
-            description={project.description}
-            imageSrc={project.imageSrc}
-            href={project.href}
-            category={project.category}
-          />
+          <motion.div key={index} variants={itemVariants}>
+            <ProjectGallery
+              id={project.id}
+              title={project.title}
+              description={project.description}
+              imageSrc={project.imageSrc}
+              href={project.href}
+              category={project.category}
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      <div className='mt-12 text-center'>
-        <Link
-          href={"/Projects"}
-          className='group relative block overflow-hidden rounded-lg'
+      <motion.div
+        className='mt-12 text-center'
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+      >
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <Button className='cursor-pointer' variant='primary' size='lg'>
-            Alle Projekte ansehen
-          </Button>
-        </Link>
-      </div>
+          <Link
+            href={"/Projects"}
+            className='group relative block overflow-hidden rounded-lg'
+          >
+            <Button className='cursor-pointer' variant='primary' size='lg'>
+              Alle Projekte ansehen
+            </Button>
+          </Link>
+        </motion.div>
+      </motion.div>
     </Section>
   );
 }

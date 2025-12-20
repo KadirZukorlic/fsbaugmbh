@@ -2,6 +2,8 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -30,8 +32,19 @@ const images = [
 ];
 
 export function Carousel() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <div className='overflow-hidden my-5'>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.8 }}
+      className='overflow-hidden my-5'
+    >
       <Swiper
         slidesPerView={2}
         centeredSlides={true}
@@ -58,16 +71,23 @@ export function Carousel() {
           },
         }}
       >
-        {images.map((image) => (
-          <SwiperSlide className='h-full'>
-            <img
-              src={image}
-              alt='slika1'
-              className='w-full h-full object-cover clip-diagonal'
-            />
+        {images.map((image, index) => (
+          <SwiperSlide key={index} className='h-full'>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="h-full"
+            >
+              <img
+                src={image}
+                alt={`Project ${index + 1}`}
+                className='w-full h-full object-cover clip-diagonal'
+              />
+            </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </motion.div>
   );
 }

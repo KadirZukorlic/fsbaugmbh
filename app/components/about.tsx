@@ -1,7 +1,11 @@
+"use client";
+
 import { CheckCircle } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Section } from "./ui/section";
 import ScrollAnimationX from "./ScrollAnimationX";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const image6 = "/images/projekat6.jpg";
 
@@ -15,16 +19,21 @@ const benefits = [
 ];
 
 export function About() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <Section
-      id='ueber-uns'
-      title='Über FS Bauunternehmer'
-      description='Wir bauen für Sie - mit Leidenschaft, Präzision und Zuverlässigkeit.'
+      id="ueber-uns"
+      title="Über FS Bauunternehmer"
+      description="Wir bauen für Sie - mit Leidenschaft, Präzision und Zuverlässigkeit."
     >
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <ScrollAnimationX sec={0.3} side='left'>
-            <p className='text-lg text-gray-700 mb-6'>
+          <ScrollAnimationX sec={0.3} side="left">
+            <p className="text-lg text-gray-700 mb-6">
               FS Bauunternehmer ist Ihr zuverlässiger Partner für alle
               Bauvorhaben in Böblingen und Umgebung. Seit unserer Gründung haben
               wir uns auf Renovierungs-, Sanierungs- und Umbauarbeiten
@@ -33,8 +42,8 @@ export function About() {
             </p>
           </ScrollAnimationX>
 
-          <ScrollAnimationX sec={0.5} side='left'>
-            <p className='text-lg text-gray-700 mb-8'>
+          <ScrollAnimationX sec={0.5} side="left">
+            <p className="text-lg text-gray-700 mb-8">
               Unser erfahrenes Team aus qualifizierten Fachkräften steht Ihnen
               von der Planung bis zur Fertigstellung mit Rat und Tat zur Seite.
               Wir legen großen Wert auf Qualität, Termintreue und eine
@@ -42,36 +51,72 @@ export function About() {
             </p>
           </ScrollAnimationX>
 
-          <ScrollAnimationX sec={0.7} side='left'>
-            <ul className='space-y-3 mb-8'>
+          <ScrollAnimationX sec={0.7} side="left">
+            <ul className="space-y-3 mb-8">
               {benefits.map((benefit, index) => (
-                <li key={index} className='flex items-start'>
-                  <CheckCircle className='h-6 w-6 text-green-500 mr-2 flex-shrink-0 mt-0.5' />
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={
+                    inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
+                  }
+                  transition={{ delay: index * 0.1 + 0.7, duration: 0.3 }}
+                  className="flex items-start"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={inView ? { scale: 1 } : { scale: 0 }}
+                    transition={{
+                      delay: index * 0.1 + 0.75,
+                      type: "spring",
+                      stiffness: 200,
+                    }}
+                  >
+                    <CheckCircle className="h-6 w-6 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  </motion.div>
                   <span>{benefit}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
 
-            <Button variant='primary' href='#kontakt'>
-              Kontaktieren Sie uns
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button variant="primary" href="#kontakt">
+                Kontaktieren Sie uns
+              </Button>
+            </motion.div>
           </ScrollAnimationX>
         </div>
 
-        <div className='relative'>
-          <div className='aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-xl'>
-            <img
-              src={image6}
-              alt='FS Bauunternehmer Team'
-              className='w-full h-full object-cover'
-            />
-          </div>
-          <div className='absolute -bottom-6 -right-3 bg-white p-4 rounded-lg shadow-lg max-w-xs'>
-            <p className='text-lg font-bold text-red-600'>Wir bauen für Sie</p>
-            <p className='text-gray-700'>
+        <div ref={ref} className="relative">
+          <ScrollAnimationX sec={0.5} side="right">
+            <motion.div
+              className="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-xl"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img
+                src={image6}
+                alt="FS Bauunternehmer Team"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </ScrollAnimationX>
+          <motion.div
+            className="absolute -bottom-6 -right-3 bg-white p-4 rounded-lg shadow-lg max-w-xs"
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={
+              inView
+                ? { opacity: 1, scale: 1, y: 0 }
+                : { opacity: 0, scale: 0.8, y: 20 }
+            }
+            transition={{ delay: 1, duration: 0.5 }}
+            whileHover={{ scale: 1.05, rotate: 1 }}
+          >
+            <p className="text-lg font-bold text-red-600">Wir bauen für Sie</p>
+            <p className="text-gray-700">
               Qualität und Zuverlässigkeit seit über 15 Jahren
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </Section>
