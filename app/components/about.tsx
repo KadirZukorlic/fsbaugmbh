@@ -23,7 +23,7 @@ export function About() {
     >
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
         <div>
-          <ScrollAnimationX sec={0.3} strana='left'>
+          <ScrollAnimationX sec={0.3} side='left'>
             <p className='text-lg text-gray-700 mb-6'>
               FS Bauunternehmer ist Ihr zuverlässiger Partner für alle
               Bauvorhaben in Böblingen und Umgebung. Seit unserer Gründung haben
@@ -33,7 +33,7 @@ export function About() {
             </p>
           </ScrollAnimationX>
 
-          <ScrollAnimationX sec={0.5} strana='left'>
+          <ScrollAnimationX sec={0.5} side='left'>
             <p className='text-lg text-gray-700 mb-8'>
               Unser erfahrenes Team aus qualifizierten Fachkräften steht Ihnen
               von der Planung bis zur Fertigstellung mit Rat und Tat zur Seite.
@@ -42,7 +42,7 @@ export function About() {
             </p>
           </ScrollAnimationX>
 
-          <ScrollAnimationX sec={0.7} strana='left'>
+          <ScrollAnimationX sec={0.7} side='left'>
             <ul className='space-y-3 mb-8'>
               {benefits.map((benefit, index) => (
                 <li key={index} className='flex items-start'>
