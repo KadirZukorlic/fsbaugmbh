@@ -33,58 +33,37 @@ export function ProjectGallery({
         href={`/project/${id}`}
         className="group relative block overflow-hidden rounded-lg cursor-pointer h-full"
       >
-        <div className="group relative overflow-hidden rounded-lg cursor-pointer h-full">
-          <div className="aspect-[4/3] w-full overflow-hidden">
+        <div className="relative overflow-hidden rounded-lg cursor-pointer h-full bg-gray-200">
+          {/* Fixed aspect ratio container to ensure same size for all images */}
+          <div className="aspect-[4/3] w-full overflow-hidden relative">
             <motion.div
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="h-full w-full"
             >
               <Image
                 src={imageSrc || "/placeholder.svg"}
                 alt={title}
                 width={600}
-                height={400}
-                className="h-full w-full object-cover"
+                height={450}
+                className="h-full w-full object-cover object-center"
+                priority={false}
               />
             </motion.div>
           </div>
-          <motion.div
-            className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white"
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileHover={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.1 }}
-              className="mb-2 text-sm font-medium text-yellow-400"
-            >
+          {/* Dark overlay with details - always visible at the bottom */}
+          <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 text-white pointer-events-none">
+            <div className="mb-2 text-sm font-medium text-yellow-400">
               {category}
-            </motion.div>
-            <motion.h3
-              initial={{ y: 20, opacity: 0 }}
-              whileHover={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.15 }}
-              className="text-lg font-semibold"
-            >
+            </div>
+            <h3 className="text-lg font-semibold mb-1">
               {title}
-            </motion.h3>
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileHover={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mt-2 inline-flex items-center text-sm text-white/90 hover:text-white"
-            >
+            </h3>
+            <div className="mt-2 inline-flex items-center text-sm text-white/90">
               Details ansehen{" "}
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-              >
-                <ArrowUpRight className="ml-1 h-4 w-4" />
-              </motion.span>
-            </motion.div>
-          </motion.div>
+              <ArrowUpRight className="ml-1 h-4 w-4" />
+            </div>
+          </div>
         </div>
       </Link>
     </motion.div>

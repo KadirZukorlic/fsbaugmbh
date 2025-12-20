@@ -91,10 +91,10 @@ export function Services() {
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr"
       >
         {services.map((service, index) => (
-          <motion.div key={index} variants={itemVariants}>
+          <motion.div key={index} variants={itemVariants} className="h-full">
             <ServiceCard
               title={service.title}
               description={service.description}

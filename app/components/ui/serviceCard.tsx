@@ -25,18 +25,18 @@ export function ServiceCard({
     <>
       {icon && (
         <motion.div
-          className="mb-4 text-yellow-500"
+          className="mb-4 text-yellow-500 flex-shrink-0"
           whileHover={{ scale: 1.1, rotate: 5 }}
           transition={{ duration: 0.2 }}
         >
           {icon}
         </motion.div>
       )}
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-xl font-bold mb-2 flex-shrink-0">{title}</h3>
+      <p className="text-gray-600 flex-grow">{description}</p>
       {href && (
         <motion.div
-          className="mt-4 flex items-center text-yellow-500 font-medium"
+          className="mt-4 flex items-center text-yellow-500 font-medium flex-shrink-0"
           whileHover={{ x: 5 }}
           transition={{ duration: 0.2 }}
         >
@@ -56,6 +56,7 @@ export function ServiceCard({
       <motion.div
         whileHover={{ y: -5 }}
         transition={{ duration: 0.2 }}
+        className="h-full"
       >
         <Link href={href} className={cardClasses}>
           {content}
