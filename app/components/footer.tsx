@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Instagram } from "lucide-react";
 
 export function Footer() {
@@ -7,10 +8,12 @@ export function Footer() {
       <div className='container mx-auto px-4 py-12'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
           <div>
-            <img
-              src='/logo.png'
+            <Image
+              src='/images/logo.png'
               alt='FS Bauunternehmer Logo'
-              className='h-16 w-auto mb-4'
+              width={250}
+              height={100}
+              className='h-20 w-auto mb-4'
             />
             <p className='text-gray-400 mb-6'>
               Ihr zuverlässiger Partner für alle Bauvorhaben in Böblingen und
